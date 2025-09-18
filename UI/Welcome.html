@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA Welcome</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      body {
+        font-family: "Space Grotesk", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="border-b border-gray-200/10 dark:border-white/10">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+<a class="flex items-center gap-2" href="#">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+<span class="text-xl font-bold text-gray-900 dark:text-white">AURA</span>
+</a>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center">
+<a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-primary/90 transition-colors" href="#"> Get Started </a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center">
+<div class="text-center px-4 py-16">
+<div class="max-w-2xl mx-auto">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight">
+              Welcome to <span class="text-primary">AURA</span>
+</h1>
+<p class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+              Enhance your communication in real-time with our AI-powered language tools. Translate effortlessly and speak confidently.
+            </p>
+<div class="mt-10">
+<a class="bg-primary text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105" href="#"> Get Started Now </a>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
