@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA - Past Translations</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 border-b border-gray-200/50 dark:border-gray-700/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="text-primary size-7">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h1 class="text-lg font-bold text-gray-900 dark:text-white">AURA</h1>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4 sm:gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500"> search </span>
+<input class="w-48 rounded-lg border-transparent bg-gray-200/50 dark:bg-gray-800/50 py-2 pl-10 pr-4 text-sm text-gray-900 dark:text-white placeholder:text-gray-500 focus:border-primary focus:ring-primary" placeholder="Search" type="search"/>
+</div>
+<button class="rounded-full p-2 text-gray-500 hover:bg-gray-200/50 dark:text-gray-400 dark:hover:bg-gray-800/50">
+<span class="material-symbols-outlined"> settings </span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6GyojLkhW3vKp6rPHn8-Kzicf9IT9ExxzRxAncvpWrjNsvIa1Pz-8DjAa-6tUe5511lhORVeUDEZSdPirsz8BGTMGTjnnHwEl81htT58j6IF9S90op7Iv6I6vw7CT5eElvObn5c6k7lIHM6TLnf0Iz5qLCKesTBlnpUlZQp9GWUSJnU33C_OXyOKCI6_HGACokO4id-UhhITQVcLCLc7Mw7-cp7K7QVIUN_TVFrgnmc2PCMnwQ_DE4nWscgntHTf9m-L1ViANP5b7");'></div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white">Past Translations</h2>
+<p class="mt-1 text-gray-600 dark:text-gray-400">Review and manage your saved conversations.</p>
+</div>
+<div class="mb-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500"> search </span>
+<input class="w-full rounded-lg border-transparent bg-gray-200/50 dark:bg-gray-800/50 py-3 pl-12 pr-4 text-gray-900 dark:text-white placeholder:text-gray-500 focus:border-primary focus:ring-primary" placeholder="Search past translations by name, language, or keyword" type="search"/>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<button class="flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30">
+<span>Date</span>
+<span class="material-symbols-outlined text-base"> arrow_drop_down </span>
+</button>
+<button class="flex items-center gap-2 rounded-full bg-gray-200/50 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:bg-gray-800/50 dark:text-gray-300 dark:hover:bg-gray-800">
+<span>Language</span>
+<span class="material-symbols-outlined text-base"> arrow_drop_down </span>
+</button>
+<button class="flex items-center gap-2 rounded-full bg-gray-200/50 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:bg-gray-800/50 dark:text-gray-300 dark:hover:bg-gray-800">
+<span>Participants</span>
+<span class="material-symbols-outlined text-base"> arrow_drop_down </span>
+</button>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Recent</h3>
+<div class="space-y-2">
+<div class="flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-colors hover:bg-gray-200/50 dark:hover:bg-gray-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined"> mic </span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-gray-900 dark:text-white">Meeting with Elena Rodriguez</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">English to Spanish</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-sm text-gray-600 dark:text-gray-400">Today, 10:30 AM</p>
+</div>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-colors hover:bg-gray-200/50 dark:hover:bg-gray-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined"> mic </span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-gray-900 dark:text-white">Discussion with Jean-Pierre Dubois</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">French to English</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-sm text-gray-600 dark:text-gray-400">Yesterday, 2:15 PM</p>
+</div>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-colors hover:bg-gray-200/50 dark:hover:bg-gray-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined"> mic </span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-gray-900 dark:text-white">Presentation by Klaus Schmidt</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">German to English</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-sm text-gray-600 dark:text-gray-400">2 days ago, 11:00 AM</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Older</h3>
+<div class="space-y-2">
+<div class="flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-colors hover:bg-gray-200/50 dark:hover:bg-gray-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined"> mic </span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-gray-900 dark:text-white">Call with Hiroshi Tanaka</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">Japanese to English</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-sm text-gray-600 dark:text-gray-400">June 15, 2024, 9:45 AM</p>
+</div>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-colors hover:bg-gray-200/50 dark:hover:bg-gray-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined"> mic </span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-gray-900 dark:text-white">Conversation with Marco Rossi</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">Italian to English</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-sm text-gray-600 dark:text-gray-400">May 22, 2024, 3:30 PM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
