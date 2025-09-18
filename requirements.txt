@@ -1,0 +1,14 @@
+pathway>=0.7.0
+langchain>=0.0.267
+openai>=0.27.8
+python-dotenv>=1.0.0
+gtts>=2.3.2
+SpeechRecognition>=3.10.0
+transformers>=4.30.2
+torch>=2.0.1
+pydub>=0.25.1
+streamlit>=1.24.0
+sentencepiece>=0.1.99
+sacremoses>=0.0.53
+protobuf>=3.20.0
+faiss-cpu>=1.7.4
