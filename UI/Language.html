@@ -119,9 +119,8 @@
 </div>
 </main>
 </div>
-
 <script>
-document.querySelector("button").addEventListener("click", async () => {
+document.querySelector("button.group").addEventListener("click", async (event) => {
     const micButton = event.currentTarget;
     micButton.disabled = true;
     micButton.classList.add("opacity-50");
