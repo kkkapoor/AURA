@@ -88,7 +88,9 @@
 <div class="relative">
 <textarea class="w-full p-4 rounded-lg bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 focus:ring-primary focus:border-primary resize-none placeholder:text-gray-400 dark:placeholder:text-gray-500" id="source-text" placeholder="Your speech will appear here..." readonly="" rows="8"></textarea>
 <div class="absolute bottom-3 right-3 flex items-center gap-2 text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-base">volume_up</span>
+  <button type="button" class="play-audio-btn" data-target="source-text" aria-label="Play source text">
+    <span class="material-symbols-outlined text-base">volume_up</span>
+  </button>
 </div>
 </div>
 </div>
@@ -104,7 +106,9 @@
 <div class="relative">
 <textarea class="w-full p-4 rounded-lg bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-700 focus:ring-primary focus:border-primary resize-none placeholder:text-gray-400 dark:placeholder:text-gray-500" id="translated-text" placeholder="Translation will appear here..." readonly="" rows="8"></textarea>
 <div class="absolute bottom-3 right-3 flex items-center gap-2 text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-base">volume_up</span>
+  <button type="button" class="play-audio-btn" data-target="translated-text" aria-label="Play translated text">
+    <span class="material-symbols-outlined text-base">volume_up</span>
+  </button>
 </div>
 </div>
 </div>
@@ -130,11 +134,21 @@ document.querySelector("button.group").addEventListener("click", async (event) =
         const data = await response.json();
 
         if (data.success) {
-            document.getElementById("source-text").value = data.spoken_text;
-            document.getElementById("translated-text").value = data.translated_text;
-        } else {
-            alert("Error: " + data.error);
-        }
+    document.getElementById("source-text").value = data.spoken_text;
+    document.getElementById("translated-text").value = data.translated_text;
+
+    // Auto-play the translated text using speech synthesis
+    if (data.translated_text) {
+        const utterance = new SpeechSynthesisUtterance(data.translated_text);
+        // Set language based on selected target language dropdown
+        const targetLang = document.getElementById('target-language').value;
+        utterance.lang = targetLang.includes('Hindi') ? 'hi-IN' : 'en-US';
+        speechSynthesis.speak(utterance);
+    }
+} else {
+    alert("Error: " + data.error);
+}
+
     } catch (error) {
         console.error("Fetch error:", error);
         alert("Failed to connect to the server.");
@@ -143,5 +157,31 @@ document.querySelector("button.group").addEventListener("click", async (event) =
     micButton.disabled = false;
     micButton.classList.remove("opacity-50");
 });
+</script>
+<script>
+  document.querySelectorAll('.play-audio-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const textArea = document.getElementById(targetId);
+      const text = textArea.value;
+
+      if (!text) {
+        alert('No text to play!');
+        return;
+      }
+
+      // Create a new SpeechSynthesisUtterance
+      const utterance = new SpeechSynthesisUtterance(text);
+
+      // Set language based on selected dropdown for better pronunciation
+      if (targetId === 'source-text') {
+        utterance.lang = document.getElementById('source-language').value.includes('Hindi') ? 'hi-IN' : 'en-US';
+      } else {
+        utterance.lang = document.getElementById('target-language').value.includes('Hindi') ? 'hi-IN' : 'en-US';
+      }
+
+      speechSynthesis.speak(utterance);
+    });
+  });
 </script>
 </body></html>
