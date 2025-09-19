@@ -44,6 +44,31 @@
     }
   </style>
 </head>
+<script>
+document.querySelector("button").addEventListener("click", async () => {
+    const micButton = event.currentTarget;
+    micButton.disabled = true;
+    micButton.classList.add("opacity-50");
+    
+    try {
+        const response = await fetch("http://localhost:5000/listen");
+        const data = await response.json();
+
+        if (data.success) {
+            document.getElementById("source-text").value = data.spoken_text;
+            document.getElementById("translated-text").value = data.translated_text;
+        } else {
+            alert("Error: " + data.error);
+        }
+    } catch (error) {
+        console.error("Fetch error:", error);
+        alert("Failed to connect to the server.");
+    }
+
+    micButton.disabled = false;
+    micButton.classList.remove("opacity-50");
+});
+</script>
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="flex flex-col min-h-screen">
 <header class="flex items-center justify-between px-10 py-4 border-b border-gray-200 dark:border-gray-800">
@@ -81,7 +106,7 @@
 <select class="form-select w-1/2 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-primary focus:border-primary" id="source-language">
 <option>English (US)</option>
 <option>Hindi</option>
-<option>French</option>
+<option>Hinglish</option>
 </select>
 </div>
 <div class="relative">
@@ -95,9 +120,9 @@
 <div class="flex items-center justify-between">
 <label class="font-medium text-gray-700 dark:text-gray-300" for="target-language">To</label>
 <select class="form-select w-1/2 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-primary focus:border-primary" id="target-language">
-<option>Spanish</option>
+<option>Hindi</option>
 <option>English (US)</option>
-<option>French</option>
+<option>English (UK)</option>
 </select>
 </div>
 <div class="relative">
