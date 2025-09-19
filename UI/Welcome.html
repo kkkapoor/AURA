@@ -3,78 +3,42 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AURA Welcome</title>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
 <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              primary: "#13a4ec",
+              "primary": "#137fec",
               "background-light": "#f6f7f8",
-              "background-dark": "#101c22",
+              "background-dark": "#101922",
             },
             fontFamily: {
-              display: ["Space Grotesk", "sans-serif"],
+              "display": ["Inter"],
             },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
           },
         },
       };
     </script>
-<style>
-      body {
-        font-family: "Space Grotesk", sans-serif;
-      }
-    </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="flex flex-col min-h-screen">
-<header class="border-b border-gray-200/10 dark:border-white/10">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-16">
-<div class="flex items-center">
-<a class="flex items-center gap-2" href="#">
-<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
-</svg>
-<span class="text-xl font-bold text-gray-900 dark:text-white">AURA</span>
-</a>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen w-full items-center justify-center">
+<div class="flex w-full max-w-lg flex-col items-center p-8 text-center">
+<div class="mb-6 h-48 w-48 overflow-hidden rounded-xl">
+<img alt="AURA Logo Abstract" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHU_K8SJYuZRS5ibi2uVHs9Jm4hA1XENG1uYNOpCIWoPGFAaW7TBMq_I-SEHSIfOuuOzg_2zmWt_5T4Cy3rk7sMKsEEklDJplkjDYcbyRyBStd7rAe5U7PdBcxZ-O7nt9rsvvV_morPc-ZZ71VPywNlCfymDzvexwt6oHccm0FzUEd7LcPHASLsUFjlSjtD9KPaaYUa3nvokY8TQ7fwQOdQeFSjyBuqCF-J9LJJJDjQW0lHQRCNf4rE4ozk482msmiKEavsNcRQGkr"/>
 </div>
-<nav class="hidden md:flex items-center space-x-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Features</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
-</nav>
-<div class="flex items-center">
-<a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg hover:bg-primary/90 transition-colors" href="#"> Get Started </a>
+<h1 class="text-4xl font-extrabold text-background-dark dark:text-background-light">Welcome to AURA</h1>
+<p class="mt-2 text-base text-background-dark/70 dark:text-background-light/70">Break communication barriers with real-time speech-to-speech translation.</p>
+<div class="mt-8 flex w-full max-w-xs flex-col space-y-4">
+<button class="w-full rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">Get Started</button>
+<a class="w-full rounded-lg bg-transparent px-6 py-3 text-base font-bold text-primary ring-2 ring-primary transition-colors duration-200 hover:bg-primary/10 focus:outline-none focus:ring-4 focus:ring-primary/50" href="#">Watch Demo</a>
 </div>
 </div>
-</div>
-</header>
-<main class="flex-grow flex items-center justify-center">
-<div class="text-center px-4 py-16">
-<div class="max-w-2xl mx-auto">
-<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight">
-              Welcome to <span class="text-primary">AURA</span>
-</h1>
-<p class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
-              Enhance your communication in real-time with our AI-powered language tools. Translate effortlessly and speak confidently.
-            </p>
-<div class="mt-10">
-<a class="bg-primary text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105" href="#"> Get Started Now </a>
-</div>
-</div>
-</div>
-</main>
 </div>
 
 </body></html>
