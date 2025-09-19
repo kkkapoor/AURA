@@ -44,31 +44,7 @@
     }
   </style>
 </head>
-<script>
-document.querySelector("button").addEventListener("click", async () => {
-    const micButton = event.currentTarget;
-    micButton.disabled = true;
-    micButton.classList.add("opacity-50");
-    
-    try {
-        const response = await fetch("http://localhost:5000/listen");
-        const data = await response.json();
 
-        if (data.success) {
-            document.getElementById("source-text").value = data.spoken_text;
-            document.getElementById("translated-text").value = data.translated_text;
-        } else {
-            alert("Error: " + data.error);
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-        alert("Failed to connect to the server.");
-    }
-
-    micButton.disabled = false;
-    micButton.classList.remove("opacity-50");
-});
-</script>
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="flex flex-col min-h-screen">
 <header class="flex items-center justify-between px-10 py-4 border-b border-gray-200 dark:border-gray-800">
@@ -144,4 +120,29 @@ document.querySelector("button").addEventListener("click", async () => {
 </main>
 </div>
 
+<script>
+document.querySelector("button").addEventListener("click", async () => {
+    const micButton = event.currentTarget;
+    micButton.disabled = true;
+    micButton.classList.add("opacity-50");
+    
+    try {
+        const response = await fetch("http://localhost:5000/listen");
+        const data = await response.json();
+
+        if (data.success) {
+            document.getElementById("source-text").value = data.spoken_text;
+            document.getElementById("translated-text").value = data.translated_text;
+        } else {
+            alert("Error: " + data.error);
+        }
+    } catch (error) {
+        console.error("Fetch error:", error);
+        alert("Failed to connect to the server.");
+    }
+
+    micButton.disabled = false;
+    micButton.classList.remove("opacity-50");
+});
+</script>
 </body></html>
