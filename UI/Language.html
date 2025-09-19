@@ -126,7 +126,7 @@ document.querySelector("button.group").addEventListener("click", async (event) =
     micButton.classList.add("opacity-50");
     
     try {
-        const response = await fetch("http://localhost:5000/listen");
+       const response = await fetch("http://127.0.0.1:5000/listen");
         const data = await response.json();
 
         if (data.success) {

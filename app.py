@@ -39,19 +39,22 @@ def listen_speech():
 
 # -------------------------------
 # Route to handle speech input
-# -------------------------------
 @app.route('/listen', methods=['GET'])
 def handle_listen():
-    spoken_text = listen_speech()
-    if spoken_text:
-        translated = translate_text(spoken_text)
-        return jsonify({
-            'success': True,
-            'spoken_text': spoken_text,
-            'translated_text': translated
-        })
-    else:
-        return jsonify({'success': False, 'error': 'Could not recognize speech'})
+    try:
+        spoken_text = listen_speech()
+        if spoken_text:
+            translated = translate_text(spoken_text)
+            return jsonify({
+                'success': True,
+                'spoken_text': spoken_text,
+                'translated_text': translated
+            })
+        else:
+            return jsonify({'success': False, 'error': 'Could not recognize speech'})
+    except Exception as e:
+        print("Error in /listen route:", str(e))
+        return jsonify({'success': False, 'error': 'Server error occurred'})
 
 # -------------------------------
 # Run server
