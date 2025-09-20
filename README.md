@@ -1,88 +1,129 @@
-# AURA (Augmented Universal Real-time Assistant)
+AURA – Real-time Hinglish to English Speech Translation
+AURA is a real-time speech recognition and translation assistant. It can recognize Hindi, English, or Hinglish speech, translate it into English (or other target languages), and play the translated output using text-to-speech. The project includes a Flask backend for speech recognition and translation, a Pathway-based processing loop, and a Tailwind-powered frontend dashboard.
 
-AURA is a real-time multilingual translation system designed to enhance communication by solving linguistic challenges in real-time. It allows users to speak or type words in their native language and receive instant English translations.
+Features
+🎤 Real-time speech capture using microphone.
 
-## Features
+🌐 Translation of Hindi, English, or Hinglish into English (US/UK) or Hindi.
 
-- Real-time data processing using Pathway
-- Support for multiple languages (French, Hindi, Bengali, Spanish, German)
-- Simple and intuitive user interface
-- Instant translation feedback
+🗣️ Automatic text-to-speech playback of translations.
 
-## Architecture
+⚡ Flask API with CORS-enabled frontend communication.
 
-AURA uses the following components:
+🎨 Beautiful TailwindCSS dashboard for interactive usage.
 
-1. **Pathway Pipeline**: For real-time data ingestion and processing
-2. **Translation Models**: Pre-trained models for multilingual translation
-3. **Streamlit UI**: For user interaction and displaying translations
+🔄 Pathway integration for UDF-based translation pipelines.
 
-## Setup Instructions
+Project Structure
+text
+.
+├── app.py                # Flask backend for speech recognition & translation
+├── (Pathway Loop Code)   # Standalone script for CLI-based continuous listen/translate/speak
+├── templates/
+│   └── index.html        # Frontend Translation Dashboard (TailwindCSS + JS)
+├── static/               # Optional static assets (CSS/JS if customized)
+└── README.md             # Documentation
+Installation
+1. Clone Repository
+bash
+git clone https://github.com/your-username/aura-translation.git
+cd aura-translation
+2. Create Virtual Environment
+bash
+python3 -m venv venv
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
+3. Install Dependencies
+bash
+pip install -r requirements.txt
+If requirements.txt does not exist, create one with:
 
-### Prerequisites
+text
+Flask
+Flask-Cors
+speechrecognition
+pyaudio
+deep-translator
+gTTS
+pydub
+pathway
+Running the Project
+Option 1: Using Flask Backend + Frontend
+Start the Flask server:
 
-- Python 3.8 or higher
-- Virtual environment (recommended)
+bash
+python app.py
+It runs on http://127.0.0.1:5000.
 
-### Installation
+Open the frontend (index.html) in a browser.
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd AURA
-   ```
+Clicking the mic button starts recording speech.
 
-2. Create and activate a virtual environment:
-   ```
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+The recognized text is sent to the backend API (/listen).
 
-3. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+Translation is displayed and auto-played via speech synthesis.
 
-### Running the Application
+Option 2: Using CLI Continuous Loop (Pathway-based)
+Run the standalone main loop:
 
-1. Start the Pathway processing pipeline:
-   ```
-   python aura_app.py
-   ```
+bash
+python pathway_loop.py
+(Adjust filename if integrated in app.py under main().)
 
-2. In a separate terminal, start the Streamlit UI:
-   ```
-   streamlit run ui.py
-   ```
+The program will:
 
-3. (Optional) Run the input simulator to generate test data:
-   ```
-   python input_simulator.py
-   ```
+Listen from microphone.
 
-## Usage
+Translate Hinglish/Hindi speech to English.
 
-1. Open the Streamlit UI in your browser (typically at http://localhost:8501)
-2. Select your preferred language from the dropdown menu
-3. Type or speak a word or phrase in your native language
-4. Receive the English translation in real-time
+Speak the translated output.
 
-## Project Structure
+Frontend Overview
+Built with TailwindCSS for sleek, responsive UI.
 
-- `aura_app.py`: Main application with Pathway pipeline
-- `ui.py`: Streamlit-based user interface
-- `input_simulator.py`: Tool to generate test data
-- `requirements.txt`: Project dependencies
-- `input_data/`: Directory for input data files
-- `output_data/`: Directory for processed output files
+Input/Output panels for speech and translation.
 
-## Future Enhancements
+Dropdown selectors for source and target languages.
 
-- Add support for more languages
-- Implement speech-to-text for voice input
-- Enhance language detection accuracy
-- Add context-aware translation capabilities using RAG
+Mic button → starts recording via backend call.
 
-## License
+Speaker buttons → play back recognized/translated text with correct TTS accent.
 
-[MIT License](LICENSE)
+Example Workflow
+User clicks mic button.
+
+System records 5–7 seconds of speech.
+
+Recognized Hindi/Hinglish is displayed in the Source box.
+
+Translated English text is displayed in the Target box.
+
+Speech synthesis auto-plays the translated output.
+
+Requirements
+Python 3.8+
+
+Microphone access enabled
+
+Browser with Web Speech API support (Chrome recommended)
+
+Troubleshooting
+Missing PyAudio:
+
+bash
+pip install pipwin
+pipwin install pyaudio
+No speech detected: Check microphone permissions.
+
+Translation issues: Deep Translator may face API rate limits; retry or switch provider if needed.
+
+Playback issues: Ensure system sound output is available (Windows users may need ffmpeg for pydub).
+
+Roadmap
+ Add multilingual target support beyond English/Hindi.
+
+ Enable continuous streaming recognition instead of fixed chunks.
+
+ Build Docker container for cross-platform deployment.
+
+ Deploy backend on cloud and serve dashboard online.
